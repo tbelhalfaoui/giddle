@@ -1,0 +1,93 @@
+[ng-cloak] {
+  display: none !important;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+div {
+    margin: 10px;
+}
+div#score {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #636363;
+}
+div#logo {
+    margin-top: 40px;
+}
+div#question {
+    margin-top: 30px;
+    height: 15px;
+    font-weight: bold;
+}
+input {
+    border       : solid 1px #A0A0A0;
+    height       : 25px;
+    margin-left  : 3px;
+    margin-right : 3px;
+    margin-bottom: 15px;
+    font-size    : 10pt;
+    color        : black;
+}
+input:focus {
+    outline: 0px;
+}
+input[type="submit"] {
+    width: 50px;
+}
+input[type="text"] {
+    width: 300px;
+    background-color: #E5E5E5;
+}
+input.correct {
+    border-color: #00CC00;
+    background-color: #C7FFC7;
+}
+input.wrong {
+    border-color: #FF0000;
+    background-color: #FFE6E6;
+}
+.won {
+    background-color: #C7FFC7;
+}
+.lost {
+    background-color: #FFE6E6;
+}
+div#main_zone {
+    height: 25px;
+}
+.status {
+    font-weight: bold;
+    font-size: 12pt;
+}
+.status#won {
+    color: #00A100;
+}
+.status#lost {
+    color: #FF0000;
+}
+
+ul {
+    padding: 1px;
+    margin: auto;
+    list-style-type: none;
+    background-color: #A0A0A0;
+    width: 359px;
+}
+li {
+    border-width: 0;
+    margin-top: 1px;
+    background-color: #E5E5E5;
+    height: 20px;
+    color: #3E3E3E;
+    line-height: 25px;
+}
+li:first-child {
+    margin-top:0px;
+}

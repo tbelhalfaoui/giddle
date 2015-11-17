@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Giddle - The Google Riddle</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body ng-app="GiddleApp"
+            ng-controller="gameController"
+            ng-init="newQuestion()"
+            ng-click="newQuestionIfNeeded()"
+            ng-keypress="newQuestionIfNeeded()">
+        <div id="score">
+            Score: <span ng-bind="score"></span>
+        </div>
+        <div id="logo">
+            <img src="img/logo.png" width="265" height="70" alt="Giddle"/>
+        </div>
+        <div id="question" ng-bind="question">
+            ...
+        </div>
+        <div id="main_zone">
+            <form ng-submit="propose()" ng-hide="status=='won' || status=='lost'">
+                <input type="text" id="proposal" autocomplete="off" 
+                        ng-model="proposal"
+                        ng-class="{ correct: correct,
+                                    wrong: correct==false }"
+                        ng-disabled="status==null"
+                        set-focus="status=='guessing'" />
+                <input type="submit" value="Go" ng-disabled="status==null" />
+            </form>
+            <div ng-cloak>
+                <div class="status" id="won" ng-show="status=='won'">
+                    Gagn&eacute; !
+                </div>
+                <div class="status" id="lost" ng-show="status=='lost'">
+                    Perdu !
+                </div>
+            </div>
+        </div>
+        <ul id="answers" ng-hide="!answers.length>0" ng-cloak>
+            <li ng-repeat="answer in answers"
+                ng-class="{ won: answer[1]==1 && status=='lost',
+                            lost: answer[1]==0 && status=='lost' }">
+                            {{answer[0]}}
+            </li>
+        </ul>
+        <script src="angular/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/directives/setFocus.js"></script>
+        <script src="js/controllers/gameController.js"></script>
+        <script src="js/services/giddleService.js"></script>
+    </body>
+</html>
